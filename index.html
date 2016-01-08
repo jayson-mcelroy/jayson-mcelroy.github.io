@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+	$(document).on("pagecreate","#pagetwo",function(){
+		$("p").on("tap",function(){
+		$(this).css('background-color','green');
+		});                       
+	});
+	$(document).on("pagecreate","#pagethree",function(){
+		$("p").on("taphold",function(){
+		$(this).hide();
+		});
+	});
+	$(function(){
+  // Bind the swipeHandler callback function to the swipe event on div.box
+  $( "div.box" ).on( "swipe", swipeHandler );
+ 
+  // Callback function references the event target and adds the 'swipe' class to it
+  function swipeHandler( event ){
+    $( event.target ).addClass( "swipe" );
+  }
+});
+</script>
+<style>
+	div.box {
+		width: 200px;
+		height: 200px;
+		background-color: #108040;
+	}
+	div.box.swipe {
+		background-color: #7ACEF4;
+	}
+	div.main {
+		background-color: yellow;
+		margin-left: 10px;
+		margin-right: 10px;
+		font-style: Times New Roman;
+		font-size: 26;
+	}
+	div.footer {
+		background-color: #7CFC00;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+</style>
+</head>
+<body>
+
+<div data-role="page" id="pageone">
+	<div data-role="panel" id="myPanel">
+		<div data-role="header">
+		</div>
+		<h1>Page Options</h1>
+		<div>
+		<a href="#pageone" data-transition="slidefade">Go to Page One</a>
+		</div>
+		<div>
+		<a href="#pagetwo" data-transition="pop">Go to Page Two</a>
+		</div>
+		<div>
+		<a href="#pagethree" data-transition="slide">Go to Page Three</a>
+		</div>
+		<div>
+		<a href="#pagefour" data-transition="turn">Go to Page Four</a>
+		</div>
+	</div>
+	<div class="main" class="ui-content">
+		<form method="post" action="demoform.asp">
+		<label for="fname">First name:</label>
+		<input type="text" name="fname" id="fname">
+		<label for="lname">Last name:</label>
+		<input type="text" name="lname" id="lname">
+		<label for="phone">Phone:</label>
+		<input type="text" name="phone" id="phone">
+		</form>
+    </div>
+	<div class="footer">
+		<a href="#myPanel" class="ui-btn ui-btn-inline">Open Panel</a>
+	</div>
+</div> 
+
+
+<div data-role="page"  id="pagetwo">
+	<div data-role="panel" id="myPanel">
+		<div data-role="header">
+		</div>
+		<h1>Page Options</h1>
+		<div>
+		<a href="#pageone" data-transition="slidefade">Go to Page One</a>
+		</div>
+		<div>
+		<a href="#pagetwo" data-transition="pop">Go to Page Two</a>
+		</div>
+		<div>
+		<a href="#pagethree" data-transition="slide">Go to Page Three</a>
+		</div>
+		<div>
+		<a href="#pagefour" data-transition="turn">Go to Page Four</a>
+		</div>
+	</div>
+	<div class="main" class="ui-content">
+		<p>Click here to change the back ground color</p>
+	</div>
+	<div data-role="footer">
+		<a href="#myPanel" class="ui-btn ui-btn-inline">Open Panel</a>
+	</div>
+</div>
+
+
+<div data-role="page"  id="pagethree">
+	<div data-role="panel" id="myPanel">
+		<div data-role="header">
+		</div>
+		<h1>Page Options</h1>
+		<div>
+		<a href="#pageone" data-transition="slidefade">Go to Page One</a>
+		</div>
+		<div>
+		<a href="#pagetwo" data-transition="pop">Go to Page Two</a>
+		</div>
+		<div>
+		<a href="#pagethree" data-transition="slide">Go to Page Three</a>
+		</div>
+		<div>
+		<a href="#pagefour" data-transition="turn">Go to Page Four</a>
+		</div>
+	</div>
+	<div class="main" class="ui-content">
+		<p>You must be 18 or older to enter</p>
+		<a href="#pageone" data-transition="pop">Enter at your own risk!</a>
+		<h3>Swipe this text or in the box below.</h3>
+		<div class="box"></div>
+	</div>
+	<div class="footer">
+		<a href="#myPanel" class="ui-btn ui-btn-inline">Open Panel</a>
+	</div>
+</div>
+<div data-role="page"  data-dialog="true" id="pagefour">
+	
+	<div data-role="main" class="ui-content">
+		<p>Click here to return to the home page</p>
+		<a href="#pageone" data-transition="pop">Enter at your own risk!</a>
+	</div>
+	
+</div>
+</body>
+</html>
